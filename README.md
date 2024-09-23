@@ -4,9 +4,10 @@ A starter project for getting a front-end web app up and running with as little 
 
 Includes:
 
-- Vue.js, using Vite
+- [Vue.js](https://vuejs.org/), using Vite
 - TypeScript
-- Tailwind
+- [Tailwind](https://tailwindcss.com/)
+- [daisyUI](https://daisyui.com/)
 
 <details>
 
@@ -86,5 +87,15 @@ npm run lint
 ## Tailwind
 
 Followed: https://tailwindcss.com/docs/guides/vite#vue
+
+</details>
+
+<details>
+
+<summary>daisyUI</summary>
+
+## daisyUI
+
+Followed: https://daisyui.com/docs/install/
 
 </details>
