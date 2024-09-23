@@ -6,22 +6,16 @@ Includes:
 
 - Vue.js, using Vite
 - TypeScript
-
-Steps followed to set this project up:
-
-```shell
-npm create vue@latest
-cd webapp-starter/
-echo "v20" >> .nvmrc
-npm install
-npm run dev
-```
+- Tailwind
 
 <details>
 
 <summary>Vue.js</summary>
 
 ## Vue.js
+
+Followed:
+https://vuejs.org/guide/quick-start.html
 
 This template should help get you started developing with Vue 3 in Vite.
 
@@ -82,5 +76,15 @@ npm run test:e2e
 ```sh
 npm run lint
 ```
+
+</details>
+
+<details>
+
+<summary>Tailwind</summary>
+
+## Tailwind
+
+Followed: https://tailwindcss.com/docs/guides/vite#vue
 
 </details>
