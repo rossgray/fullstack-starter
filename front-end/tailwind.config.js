@@ -12,7 +12,8 @@ export default {
       {
         myTheme: {
           ...themes['winter'],
-          primary: '#00bd7e'
+          primary: '#00bd7e',
+          'primary-content': '#ffffff'
         }
       }
     ]
