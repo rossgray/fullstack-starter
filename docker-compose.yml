@@ -3,16 +3,33 @@ services:
     build: ./backend
     ports:
       - "8000:8000"
-    volumes:
-      - ./backend/api:/app/api
+    develop:
+      watch:
+        - path: ./backend
+          action: sync
+          target: /app
+          ignore:
+            - ./backend/.venv
+            - .venv
+        - path: ./backend/pyproject.toml
+          action: rebuild
 
   frontend:
     build: ./frontend
     ports:
       - "5173:5173"
-    volumes:
-      - ./frontend/src:/app/src
     environment:
       - VITE_API_BASE_URL=http://localhost:8000
     depends_on:
       - backend
+    develop:
+      watch:
+        - path: ./frontend
+          action: sync
+          target: /app
+          ignore:
+            - ./frontend/node_modules
+        - path: ./frontend/vite.config.ts
+          action: rebuild
+        - path: ./frontend/package.json
+          action: rebuild
