@@ -1,6 +1,6 @@
-# front-end
+# frontend
 
-Front-end for full stack app, built using:
+Frontend for full stack app, built using:
 
 - [Vue.js](https://vuejs.org/), using Vite
 - TypeScript
