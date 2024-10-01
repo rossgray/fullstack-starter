@@ -17,7 +17,7 @@ const apiClient = axios.create({
 async function fetchData() {
   errorMsg.value = ''
   try {
-    const res = await apiClient.get('/')
+    const res = await apiClient.get('/items/')
     data.value = res.data
   } catch (error) {
     data.value = null

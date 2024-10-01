@@ -16,10 +16,11 @@ RUN curl -sSL https://install.python-poetry.org | python3 -
 # Add Poetry to PATH
 ENV PATH="${PATH}:/root/.local/bin"
 
-COPY pyproject.toml poetry.lock /app/
+COPY pyproject.toml poetry.lock alembic.ini /app/
 
 RUN poetry install
 
 COPY ./api /app/api
+COPY ./alembic /app/alembic
 
 CMD ["poetry", "run", "fastapi", "dev", "--host", "0.0.0.0", "api/main.py"]

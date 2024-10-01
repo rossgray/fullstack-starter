@@ -9,10 +9,12 @@ services:
           action: sync
           target: /app
           ignore:
-            - ./backend/.venv
-            - .venv
+            - alembic/versions/
         - path: ./backend/pyproject.toml
           action: rebuild
+    volumes:
+      - ./backend/alembic/versions:/app/alembic/versions
+      - sqlite-db:/app/sqlite
 
   frontend:
     build: ./frontend
@@ -33,3 +35,16 @@ services:
           action: rebuild
         - path: ./frontend/package.json
           action: rebuild
+
+  adminer:
+    image: adminer
+    user: root
+    restart: always
+    ports:
+      - 8080:8080
+    volumes:
+      - ./login-password-less.php:/var/www/html/plugins-enabled/login-password-less.php
+      - sqlite-db:/data
+
+volumes:
+  sqlite-db:
